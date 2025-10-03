@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"        # ← Node.js 22 (ta version)
+  YARN_VERSION = "1.22.22"   # ← Yarn 1.22.22 (ta version)
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
