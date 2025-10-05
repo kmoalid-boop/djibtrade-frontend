@@ -1,19 +1,12 @@
-// src/utils/imageUtils.js - CORRIGÉ
+// src/utils/imageUtils.js
+// Version ULTRA SIMPLE pour Cloudinary
 
 export const getImageUrl = (imagePath) => {
   if (!imagePath) return null;
   
-  // DEBUG: Afficher l'URL reçue
+  // DEBUG: Afficher l'URL reçue (optionnel - pour le débogage)
   console.log('🖼️ URL image reçue:', imagePath);
   
-  // Si c'est déjà une URL complète (Cloudinary), la retourner telle quelle
-  if (imagePath.startsWith('http')) {
-    console.log('✅ URL Cloudinary détectée, retour direct');
-    return imagePath;
-  }
-  
-  // Si c'est un chemin local (ancien système)
-  console.log('🔄 Construction URL locale');
-  const baseUrl = import.meta.env.VITE_API_BASE_URL?.replace('/api', '') || '';
-  return `${baseUrl}${imagePath}`;
+  // Retourne directement l'URL - Cloudinary ou locale
+  return imagePath;
 };
