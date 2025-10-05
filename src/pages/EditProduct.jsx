@@ -509,7 +509,7 @@ export default function EditProduct() {
                       <p className="text-sm text-gray-600 mb-3">Image actuelle :</p>
                       <div className="relative inline-block">
                         <img 
-                          src={getImageUrl(productImage)} 
+                          src={product.image_url || getImageUrl(product.image)} 
                           alt="Current product" 
                           className="w-48 h-48 object-cover rounded-2xl border-2 border-gray-200 shadow-md" 
                         />

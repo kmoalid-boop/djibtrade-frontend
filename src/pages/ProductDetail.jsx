@@ -173,7 +173,7 @@ export default function ProductDetail() {
                         </div>
                       )}
                       <img 
-                        src={getImageUrl(product.image)} 
+                        src={product.image_url || getImageUrl(product.image)} 
                         alt={product.title}
                         className={`w-full h-96 object-cover transition-all duration-500 ${
                           imageLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'

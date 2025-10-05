@@ -139,7 +139,7 @@ export default function Dashboard() {
                 <div className="relative h-48 bg-gray-200">
                   {product.image ? (
                     <img 
-                      src={getImageUrl(product.image)} 
+                      src={product.image_url || getImageUrl(product.image)}
                       alt={product.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {
