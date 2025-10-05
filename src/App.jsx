@@ -55,10 +55,10 @@ function App() {
             } />
             
             <Route path="/" element={
-              <ProtectedRoute>
-                <Dashboard />
+               <ProtectedRoute>
+                 <Products />
               </ProtectedRoute>
-            } />
+           } />
             
             <Route 
               path="/edit-product/:id" 

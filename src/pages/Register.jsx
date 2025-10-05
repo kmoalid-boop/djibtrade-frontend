@@ -36,7 +36,7 @@ export default function Register() {
       setIsSuccess(true)
       // Redirection après 3 secondes
       setTimeout(() => {
-        navigate('/dashboard', { replace: true })
+        navigate('/products', { replace: true })
       }, 3000)
     } else {
       setError(res.error)
