@@ -48,9 +48,18 @@ export default function Login() {
        </Link>
        </div>
       </form>
-      <div className="mt-4 text-sm">
-        Pas de compte ? <Link className="text-sky-700" to="/register">Créer un compte</Link>
-      </div>
+      <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl text-center">
+  <p className="text-gray-700 font-medium mb-2">📦 Nouveau sur DjibTrade ?</p>
+  <p className="text-sm text-gray-600 mb-3">
+    Rejoignez la marketplace et commencez à vendre vos produits
+  </p>
+  <Link 
+    to="/register" 
+    className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+  >
+    🚀 Créer mon compte gratuit
+  </Link>
+</div>
     </div>
   )
 }
