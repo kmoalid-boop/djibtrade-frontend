@@ -1,44 +1,48 @@
 <!doctype html>
-
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Djibtrade - Plateforme de commerce et d'annonces à Djibouti. Connectez-vous pour découvrir des produits locaux et gérer vos annonces." />
 
+    <!-- Favicons générés depuis le logo Djibtrade -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#0ea5e9" />
 
-<!-- Favicons générés depuis le logo Djibtrade -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<meta name="theme-color" content="#0ea5e9" />
+    <!-- 🔥 OPTIMISATION POLICES GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Fallback pour JavaScript désactivé -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
 
-<!-- Polices Google -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 🔥 OPTIMISATION CSS -->
+    <link rel="preload" href="/assets/index-CZtJSAoI.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/assets/index-CZtJSAoI.css">
+    </noscript>
 
-<title>Djibtrade - Plateforme d'Annonces Commerciales</title>
-
-
+    <title>Djibtrade - Plateforme d'Annonces Commerciales</title>
   </head>
 
   <body class="bg-gradient-to-br from-primary-50 to-primary-100 font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-
-<script>
-  // Prévention du FOUC (Flash of Unstyled Content)
-  document.body.style.opacity = '0';
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.style.transition = 'opacity 0.3s ease-in';
-    document.body.style.opacity = '1';
-  });
-</script>
-
-
+    <script>
+      // Prévention du FOUC (Flash of Unstyled Content)
+      document.body.style.opacity = '0';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.transition = 'opacity 0.3s ease-in';
+        document.body.style.opacity = '1';
+      });
+    </script>
   </body>
 </html>
