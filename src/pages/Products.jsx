@@ -31,27 +31,21 @@ export default function Products() {
     }).format(price)
   }, [])
 
-  // Récupération des catégories
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const { data } = await api.get('/annonces/categories/')
-        if (Array.isArray(data)) {
-          setCategories(data)
-        } else if (data.results && Array.isArray(data.results)) {
-          setCategories(data.results)
-        } else {
-          setCategories([])
-        }
-      } catch (error) {
-        console.error('Erreur categories:', error)
-        setCategories([])
-      }
+ // Récupération des catégories
+useEffect(() => {
+  const fetchCategories = async () => {
+    try {
+      const { data } = await api.get('/annonces/categories/')
+      // TOUJOURS utiliser data.results - l'API Django REST retourne un objet paginé
+      setCategories(data.results || [])
+    } catch (error) {
+      console.error('Erreur categories:', error)
+      setCategories([])
     }
-    
-    fetchCategories()
-  }, [])
-
+  }
+  
+  fetchCategories()
+}, [])
   // Récupération des produits avec debounce intégré
   const fetchProducts = useCallback(async (url = null) => {
     setLoading(true)

@@ -80,20 +80,16 @@ export default function EditProduct() {
   }, [id, user?.id, navigate])
 
   // Chargement des catégories
-  const fetchCategories = useCallback(async () => {
-    try {
-      const { data } = await api.get('/annonces/categories/')
-      if (Array.isArray(data)) {
-        setCategories(data)
-      } else if (data.results && Array.isArray(data.results)) {
-        setCategories(data.results)
-      }
-    } catch (error) {
-      console.error('Erreur chargement catégories:', error)
-      setCategories([])
-    }
-  }, [])
-
+const fetchCategories = useCallback(async () => {
+  try {
+    const { data } = await api.get('/annonces/categories/')
+    // TOUJOURS utiliser data.results - API Django REST paginée
+    setCategories(data.results || [])
+  } catch (error) {
+    console.error('Erreur chargement catégories:', error)
+    setCategories([])
+  }
+}, [])
   useEffect(() => {
     fetchProductDetails()
     fetchCategories()
