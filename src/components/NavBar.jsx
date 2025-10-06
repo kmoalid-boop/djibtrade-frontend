@@ -124,10 +124,11 @@ export default function NavBar() {
         {/* Mobile menu button */}
         <button 
           className="md:hidden text-gray-700 p-2"
+          aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
+       >
+         {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+       </button>
       </nav>
 
       {/* Mobile Navigation */}

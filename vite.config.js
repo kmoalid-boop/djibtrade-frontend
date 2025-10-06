@@ -15,5 +15,26 @@ export default defineConfig({
     ],
     cors: true,
     origin: 'http://localhost:5173'
+  },
+  // ⚡ OPTIMISATIONS AJOUTÉES
+  build: {
+    target: 'esnext',
+    minify: 'esbuild',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          icons: ['react-icons'],
+          utils: ['axios']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 600
+  },
+  // Pré-chargement des assets
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
   }
 })

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloquer les pages sensibles
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api
+Disallow: /profile
+Disallow: /settings
+
+Sitemap: https://djibtrade.com/sitemap.xml
