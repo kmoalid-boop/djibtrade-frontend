@@ -6,7 +6,39 @@
   NODE_VERSION = "22"
   YARN_VERSION = "1.22.22"
 
-# 🔥 OPTIMISATIONS CACHE ET SÉCURITÉ
+# 🔥 CORRECTION CRITIQUE : Exceptions pour fichiers statiques
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/robots.txt" 
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+  status = 200
+
+[[redirects]]
+  from = "/apple-touch-icon.png"
+  to = "/apple-touch-icon.png"
+  status = 200
+
+[[redirects]]
+  from = "/site.webmanifest"
+  to = "/site.webmanifest"
+  status = 200
+
+# Redirection SPA pour toutes les autres URLs
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de cache et sécurité
 [[headers]]
   for = "/*"
   [headers.values]
@@ -45,7 +77,14 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "public, max-age=3600"
