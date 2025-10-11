@@ -6,7 +6,7 @@
   NODE_VERSION = "22"
   YARN_VERSION = "1.22.22"
 
-# 🔥 CORRECTION CRITIQUE : Exceptions pour fichiers statiques
+#  CORRECTION CRITIQUE : Exceptions pour fichiers statiques
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"

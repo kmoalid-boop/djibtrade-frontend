@@ -15,7 +15,7 @@ import {
   FiPackage,
   FiDollarSign
 } from 'react-icons/fi'
-import OptimizedImage from '../components/OptimizedImage'  // 🔥 NOUVEAU IMPORT
+import OptimizedImage from '../components/OptimizedImage'  //  NOUVEAU IMPORT
 
 export default function ProductDetail() {
   const { id } = useParams()
@@ -160,7 +160,7 @@ export default function ProductDetail() {
 
         <div className="bg-white rounded-2xl shadow-soft overflow-hidden border border-gray-100">
           <div className="grid lg:grid-cols-2 gap-8 p-6 lg:p-8">
-            {/* 🔥 SECTION IMAGE OPTIMISÉE */}
+            {/*  SECTION IMAGE OPTIMISÉE */}
             <div className="space-y-4">
               <div className="sticky top-6">
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden">

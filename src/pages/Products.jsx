@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../utils/api'
 import { FiSearch, FiMapPin, FiPhone, FiMessageSquare, FiImage, FiFilter } from 'react-icons/fi'
-import OptimizedImage from '../components/OptimizedImage'  // 🔥 NOUVEAU IMPORT
+import OptimizedImage from '../components/OptimizedImage'  //  NOUVEAU IMPORT
 
 export default function Products() {
   const navigate = useNavigate()
@@ -102,7 +102,7 @@ useEffect(() => {
       className="bg-white rounded-xl shadow-soft cursor-pointer transition-all duration-300 hover:shadow-card-hover hover:translate-y-[-4px] overflow-hidden group"
       onClick={() => handleProductClick(product.id)}
     >
-      {/* 🔥 SECTION IMAGE OPTIMISÉE */}
+      {/*  SECTION IMAGE OPTIMISÉE */}
       <div className="relative h-64 overflow-hidden bg-gray-100">
         <OptimizedImage
           src={product.image_url || product.image}
