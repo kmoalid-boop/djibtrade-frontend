@@ -15,7 +15,7 @@ import {
   FiPackage,
   FiDollarSign
 } from 'react-icons/fi'
-import { getImageUrl } from '../utils/imageUtils'
+import OptimizedImage from '../components/OptimizedImage'  // 🔥 NOUVEAU IMPORT
 
 export default function ProductDetail() {
   const { id } = useParams()
@@ -23,7 +23,6 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [imageLoading, setImageLoading] = useState(true)
   const [isSaved, setIsSaved] = useState(false)
 
   // Mémoïsation des fonctions de formatage
@@ -161,27 +160,20 @@ export default function ProductDetail() {
 
         <div className="bg-white rounded-2xl shadow-soft overflow-hidden border border-gray-100">
           <div className="grid lg:grid-cols-2 gap-8 p-6 lg:p-8">
-            {/* Section image améliorée */}
+            {/* 🔥 SECTION IMAGE OPTIMISÉE */}
             <div className="space-y-4">
               <div className="sticky top-6">
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden">
                   {product.image ? (
-                    <>
-                      {imageLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
-                          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-                        </div>
-                      )}
-                      <img 
-                        src={product.image_url || getImageUrl(product.image)} 
-                        alt={product.title}
-                        className={`w-full h-96 object-cover transition-all duration-500 ${
-                          imageLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
-                        }`}
-                        onLoad={() => setImageLoading(false)}
-                        onError={() => setImageLoading(false)}
-                      />
-                    </>
+                    <OptimizedImage
+                      src={product.image_url || product.image}
+                      alt={product.title}
+                      width={600}
+                      height={400}
+                      lazy={false} // Image principale, pas de lazy loading
+                      quality="80" // Qualité légèrement réduite pour performance
+                      className="w-full h-96 object-cover"
+                    />
                   ) : (
                     <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex flex-col items-center justify-center">
                       <FiImage className="text-6xl text-gray-400 mb-4" />

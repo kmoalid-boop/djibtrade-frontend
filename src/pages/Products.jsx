@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../utils/api'
 import { FiSearch, FiMapPin, FiPhone, FiMessageSquare, FiImage, FiFilter } from 'react-icons/fi'
-import { getImageUrl } from '../utils/imageUtils'
+import OptimizedImage from '../components/OptimizedImage'  // 🔥 NOUVEAU IMPORT
 
 export default function Products() {
   const navigate = useNavigate()
@@ -102,23 +102,16 @@ useEffect(() => {
       className="bg-white rounded-xl shadow-soft cursor-pointer transition-all duration-300 hover:shadow-card-hover hover:translate-y-[-4px] overflow-hidden group"
       onClick={() => handleProductClick(product.id)}
     >
-      {/* Section image avec fallback amélioré */}
+      {/* 🔥 SECTION IMAGE OPTIMISÉE */}
       <div className="relative h-64 overflow-hidden bg-gray-100">
-        {product.image ? (
-          <img 
-            src={product.image_url || getImageUrl(product.image)} 
-            alt={product.title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            loading="lazy"
-            onError={(e) => {
-              e.target.style.display = 'none'
-            }}
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <FiImage className="text-4xl text-gray-400" />
-          </div>
-        )}
+        <OptimizedImage
+          src={product.image_url || product.image}
+          alt={product.title}
+          width={300}
+          height={200}
+          lazy={true}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        />
         <div className="absolute top-3 left-3">
           <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-medium rounded-full shadow-sm">
             {product.category_name || 'Général'}
